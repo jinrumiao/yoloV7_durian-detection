@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['Durian']
+
+roboflow:
+  workspace: jin-cced3
+  project: durianduriandurian
+  version: 2
+  license: Public Domain
+  url: https://universe.roboflow.com/jin-cced3/durianduriandurian/dataset/2

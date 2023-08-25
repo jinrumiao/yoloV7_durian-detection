@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 3
+names: ['Atemoya', 'Durian', 'Jackfruit']
+
+roboflow:
+  workspace: jin-cced3
+  project: durianduriandurian
+  version: 4
+  license: Public Domain
+  url: https://universe.roboflow.com/jin-cced3/durianduriandurian/dataset/4

@@ -1,0 +1,6 @@
+train: E:\projects\yoloV7\project_yoloV7\dataset\train\images
+val: E:\projects\yoloV7\project_yoloV7\dataset\valid\images
+test: E:\projects\yoloV7\project_yoloV7\dataset\test\images
+
+nc: 3
+names: ['Atemoya', 'Durian', 'Jackfruit']

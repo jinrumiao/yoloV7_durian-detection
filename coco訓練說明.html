@@ -1,0 +1,32 @@
+<!--
+coco專案 : 圖片，label, 及train.txt, val.txt都在 coco 專案之下
+在上面的網址往下拉，可以看到 train, val, test, labels 的下載網址，分別如下。
+train    :  http://images.cocodataset.org/zips/train2017.zip
+val       :  http://images.cocodataset.org/zips/val2017.zip
+test     :  http://images.cocodataset.org/zips/test2017.zip
+labels :  https://github.com/WongKinYiu/yolov7/releases/download/v0.1/coco2017labels-segments.zip
+        labels解開後，會在 coco/新增 train2017.txt, val2017.txt(訓練驗証說明檔)
+目錄 : coco/images/train2017, val2017
+      cocl/lables/train2017, val2017
+
+訓練設定 data/coco.yaml : 已設定好
+設定檔 : cfg/training/yolov7.yaml : 已設定好
+
+下載空權重 : https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7_training.pt
+
+開始訓練 :
+python train.py --epoch 300 --workers 8 --device 0 --batch-size 8 --data data/coco.yaml --img 640 640 --cfg cfg/training/yolov7.yaml --name yolov7 --hyp data/hyp.scratch.p5.yaml --weights yolov7_training.pt
+epoch 預設是 300 次(寫在 train.py檔中)，所以不加的話，就以 300 次為主
+記憶体不足 :  workers減少, batch-size 減少
+4G ram 是無法執行的
+
+訓練好的模型 :
+位於 runs/train/yolov7/weights/best.pt
+
+
+
+durain test
+python train.py --epoch 300 --workers 0 --device 0 --batch-size 8 --data data/data.yaml --img 640 640 --cfg cfg/training/yolov7.yaml --name yolov7-plates_V4_300 --hyp data/hyp.scratch.p5.yaml --weights yolov7_training.pt
+python detect.py --weights runs\train\yolov7-durian\weights\best.pt --conf 0.25 --img-size 640 --source inference/durian/010.jpg --device 0
+python detect.py --weights runs\train\yolov7-plates_V4_300\weights\best.pt --conf 0.25 --img-size 640 --source inference/plates --device 0
+-->
